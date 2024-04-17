@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+  <div >
+      <h1>Add New Book</h1>
+  </div>
+
+  <form action="/add" method="post">
+    <div class="field">
+      <input type="text" size="50" name="title" placeholder="Title of Book" autocomplete="off" autofocus="true" />
+    </div>
+    <div class="field">
+      <input type="text" size="50" name="rating" placeholder="give rating out of 10" autocomplete="off" autofocus="true" />
+    </div>
+    <div class="field">
+      <input type="text" size="50" name="isbn" placeholder="ISBN" autocomplete="off" autofocus="true" />
+    </div>
+    <div clas="area" >
+      <textarea class="note" size="50" rows="5" cols="52"  type="text" name="notes" placeholder="Discription" autocomplete="off" autofocus="true" ></textarea>
+     </div>
+     <div >
+      <button type="submit" name="list">Add</button>
+    </div>
+  </form>
+
+  <style>
+    h1{
+      margin-top: 10px;
+      margin-bottom: 40px;
+      
+    }
+
+    div{
+      display: flex;
+      justify-content: center;
+    }
+
+    *{
+      background-color: white;
+      color: black;
+    }
+    button{
+      color:white;
+      margin-top: 20px;
+      height: 50px;
+      width: 70px;
+    }
+  </style>
+
+</body>
+
+</html>

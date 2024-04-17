@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Notes</title>
+    <link rel="stylesheet" href="styles/main.css" />
+
+</head>
+
+<body>
+    <div>
+        <div class="heading">
+            <h1>KEEP YOUR BOOKS</h1>
+        </div>
+
+
+        <!-- middle section (adding and sorting books) -->
+        <div class="middle">
+            <div class="button">
+                <form action="/new" method="post">
+                    Add New Book <button type="submit">add</button>
+                </form>
+            </div>
+
+            <div class="button">
+                <form action="/sort" method="post">
+                    Newley Added Books <button type="submit">view</button>
+                </form>
+
+            </div>
+
+            <div class="button">
+                <form action="/rating" method="post">
+                    Sort By Rating <button type="submit">sort</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div>
+
+            <!-- display of books  -->
+            <div class="books">
+                <% for(let item of listItems){%>
+                    <div class="info">
+                        <img class="image" src="https://covers.openlibrary.org/b/isbn/<%=+item.isbn %>.jpg " />
+                        <div>
+                            <h2 class="title">
+                                <%= item.title %>
+                            </h2>
+
+                            <!-- delete button -->
+                            <form action="/delete" method="post">
+                                <button type="submit" name="deleteItemId" value="<%= item.id %>">delete</button>
+                            </form>
+                            <h3>Rating : <%= item.rating %>
+                            </h3>
+                            <p class="notes">
+                                <%= item.notes %>
+                            </p>
+                        </div>
+                        <div>
+
+                        </div>
+
+                    </div>
+
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
